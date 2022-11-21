@@ -50,12 +50,6 @@ Route::get('/a-empresa/{string?}', function ($string = null) {
     //return view('welcome');
 })->name('a-empresa');
 
-Route::get('/users/{paramA}/{paramB}', function ($paramA, $paramB) {
-
-    return $paramA . ' - ' . $paramB;
-
-    //return view('welcome');
+Route::get('/', function () {
+    return view('welcome');
 });
-
-
-// Configuração Inicial

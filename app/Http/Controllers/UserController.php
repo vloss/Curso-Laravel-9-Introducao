@@ -11,6 +11,8 @@ class UserController extends Controller
 
         //dd($id);
 
-        return $user ;
+        //return $user ;
+
+        return view();
     }
 }
