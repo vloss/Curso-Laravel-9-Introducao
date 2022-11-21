@@ -12,6 +12,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/request', function(\Illuminate\Http\Request $request) {
+    
+    $r = $request->query('pesquisar');
+
+    dd($r);
+
+    return $request;
+})->name('request');
+
+
+
 Route::get('user/{user}', function(\App\Models\User $user) {
     return dd($user);
 })->name('user.get');
