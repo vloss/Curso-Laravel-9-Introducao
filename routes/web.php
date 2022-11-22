@@ -24,7 +24,8 @@ Route::get('/request', function(\Illuminate\Http\Request $request) {
 })->name('request');
 
 
-Route::get('user/{user}', [UserController::class, 'show'])->name('user.get');
+Route::get('user/{user}', [UserController::class, 'show'])->name('user.show');
+Route::get('users', [UserController::class, 'index'])->name('user.index');
 
 Route::get('user/email/{user:email}', function(\App\Models\User $user) {
     return dd($user);
