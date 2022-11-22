@@ -13,8 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/hello-world', function () {
+
+    return ['name' => 'Vinicius',
+            'idade' => 31];
+
+
+    //return view('welcome');
 });
 
 
