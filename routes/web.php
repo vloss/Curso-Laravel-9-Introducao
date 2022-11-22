@@ -12,12 +12,37 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('user/{user}', function(\App\Models\User $user) {
+    return dd($user);
+})->name('user.get');
 
-Route::get('/hello-world', function () {
+Route::get('user/email/{user:email}', function(\App\Models\User $user) {
+    return dd($user);
+})->name('user.get.email');
 
-    return ['name' => 'Vinicius',
-            'idade' => 31];
 
+Route::prefix('usuarios')->group(function(){
+    Route::get('/', function(){
+        return 'Usuários';
+    })->name('usuarios.listagem');
+    Route::get('{id}', function(){
+        return 'Mostrar Detalhes';
+    })->name('usuarios.detalhes');
+    Route::get('{id}/tags', function(){
+        return 'Tags do Usuário';
+    })->name('usuarios.tags');
+});
+
+Route::get('/a-empresa/{string?}', function ($string = null) {
+
+    return $string;
+
+    //return view('welcome');
+})->name('a-empresa');
+
+Route::get('/users/{paramA}/{paramB}', function ($paramA, $paramB) {
+
+    return $paramA . ' - ' . $paramB;
 
     //return view('welcome');
 });
