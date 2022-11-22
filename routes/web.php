@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +24,7 @@ Route::get('/request', function(\Illuminate\Http\Request $request) {
 })->name('request');
 
 
-
-Route::get('user/{user}', function(\App\Models\User $user) {
-    return dd($user);
-})->name('user.get');
+Route::get('user/{user}', [UserController::class, 'show'])->name('user.get');
 
 Route::get('user/email/{user:email}', function(\App\Models\User $user) {
     return dd($user);
