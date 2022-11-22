@@ -9,5 +9,8 @@
 <body>
     <h1>Teste</h1>
 
+
+    {{ route('user.get', 1) }}
+    {{ dd($user->name) }}
 </body>
 </html>

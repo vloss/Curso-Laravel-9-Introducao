@@ -13,6 +13,8 @@ class UserController extends Controller
 
         //return $user ;
 
-        return view('user/show');
+        $data['user'] = $user;
+
+        return view('user/show', $data);
     }
 }
