@@ -13,6 +13,6 @@ class UserController extends Controller
 
         //return $user ;
 
-        return view();
+        return view('user/show');
     }
 }
