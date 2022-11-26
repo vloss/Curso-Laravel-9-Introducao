@@ -9,18 +9,73 @@ class BusinessController extends Controller
 {
     public function index(){
 
-        $businesses = Business::create([
-            'name'  => 'Jon Snow',
-            'email' => 'jon@snow.com',
-            'address' => 'Rua A quadra B'
-        ]);
+        // ****************************************
+        // Inserir Registro no Banco de Dados
+        // ****************************************
+        // $businesses = Business::create([
+        //     'name'  => 'Jon Snow',
+        //     'email' => 'jon@snow.com',
+        //     'address' => 'Rua A quadra B'
+        // ]);
 
-        dd($businesses);
-        
+        // dd($businesses);
+
+
+
+        // ****************************************
+        // Bucar Todos Registros do Banco
+        // ****************************************
         //$businesses = Business::all();
 
-        // $business = Business::find(1);
 
+
+
+        // ****************************************
+        // 01 Atualizar Registro
+        // ****************************************
+        // $business = Business::find(3);
+
+        // $business->name     = 'Vinicius';
+        // $business->email    = 'vinicius@vloss.com.br';
+        // $business->address  = 'Quadra A Rua B';
+        // $business->save();
+
+        // dd($business);
+
+
+
+        // ****************************************
+        // 02 Atualizar Registro
+        // ****************************************
+        // $business = Business::find(3)->update([
+        //     'name'     => 'Vinicius Loss',
+        //     'email'    => 'viniciusloss@vloss.com.br',
+        //     'address'  => 'Quadra A Rua B'
+        // ]);
+
+        // dd($business);
+
+
+
+        // ****************************************
+        // 03 Atualizar Registro
+        // ****************************************
+        $input = [
+            'name' => 'Loss',
+            'email' => 'loss@loss.com',
+            'address' => 'Rua AAA'
+        ];
+
+        $business = Business::find(3);
+        $business->fill($input);
+        $business->save();
+
+        dd($business);
+
+
+        // ****************************************
+        // Buscar Registro
+        // ****************************************
         // $business_where = Business::where('name', 'Hoppe, Johns and Langosh')->get();
 
         // $business_where = Business::where('name', 'Hoppe, Johns and Langosh')
