@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BusinessController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,9 @@ Route::get('/request', function(\Illuminate\Http\Request $request) {
     return $request;
 })->name('request');
 
+
+Route::get('posts/', [PostController::class, 'index'])->name('post.index');
+Route::get('posts/{post}', [PostController::class, 'show'])->name('post.show');
 
 Route::get('user/{user}', [UserController::class, 'show'])->name('user.show');
 Route::get('users', [UserController::class, 'index'])->name('user.index');
