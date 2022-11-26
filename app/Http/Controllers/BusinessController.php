@@ -32,10 +32,10 @@ class BusinessController extends Controller
         // ****************************************
         // Deletar Registro
         // ****************************************
-        $business = Business::find(3);
-        $business->delete();
+        // $business = Business::find(3);
+        // $business->delete();
 
-        dd($business);
+        // dd($business);
 
 
         // ****************************************
@@ -94,5 +94,25 @@ class BusinessController extends Controller
         // $business_where_first = Business::where('name', 'Hoppe, Johns and Langosh')->first();
 
         // dd($business_where_first, $business_where, $business, $businesses);
+
+
+        // ****************************************
+        // DEBUG e QUERY Registro
+        // ****************************************
+        // $business_where = Business::find(2);
+        // dd($business_where->toArray());
+
+        // $business_where = Business::where('name', 'Jon Snow')->get();
+        // dd($business_where->toArray());
+
+        \DB::connection()->enableQueryLog();
+
+        $business_where = Business::where('name', 'LIKE','%Jon%')->get();
+
+        $query = \DB::getQueryLog();
+
+        dd($query);
+        dd($business_where->toArray());
+
     }
 }
