@@ -8,16 +8,28 @@ use App\Models\Business;
 class BusinessController extends Controller
 {
     public function index(){
-        $businesses = Business::all();
 
-        // dd($businesses);
+        $businesses = Business::create([
+            'name'  => 'Jon Snow',
+            'email' => 'jon@snow.com',
+            'address' => 'Rua A quadra B'
+        ]);
 
-        $business = Business::find(1);
-
-        $business_where = Business::where('name', 'Hoppe, Johns and Langosh')->get();
+        dd($businesses);
         
-        $business_where_first = Business::where('name', 'Hoppe, Johns and Langosh')->first();
+        //$businesses = Business::all();
 
-        dd($business_where_first, $business_where, $business, $businesses);
+        // $business = Business::find(1);
+
+        // $business_where = Business::where('name', 'Hoppe, Johns and Langosh')->get();
+
+        // $business_where = Business::where('name', 'Hoppe, Johns and Langosh')
+        //     ->where('', '')
+        //     ->orwhere('', '')
+        //     ->get();
+        
+        // $business_where_first = Business::where('name', 'Hoppe, Johns and Langosh')->first();
+
+        // dd($business_where_first, $business_where, $business, $businesses);
     }
 }
