@@ -1,11 +1,18 @@
 
-<h1>Show</h1>
 
-{{ route('user.show' , 1) }} <br />
-{{ date('d/m/y') }} <br />
+@extends('layouts/layout_sistema')
+
+@section('descricao', 'Show Usuário')
+
+@section('content')
+    
+
+
+{{-- {{ route('user.show' , 1) }} <br /> --}}
+{{-- {{ date('d/m/y') }} <br /> --}}
 
 {{ $user->name }} <br />
-
+{{-- 
 @php
     $total = null;
 @endphp
@@ -28,4 +35,6 @@
     <p>Nome igual a condição!</p>
 @else
     <p>Nome diferente a condição!</p>
-@endif
+@endif --}}
+
+@endsection

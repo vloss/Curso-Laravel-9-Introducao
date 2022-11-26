@@ -22,6 +22,30 @@ class UserController extends Controller
 
         //return $user ;
 
+        // ****************************************
+        //      Criando Posts para um usuário
+        // ****************************************
+        // $user->hasPosts()->create([
+        //     'title'     => 'Meu Post',
+        //     'content'   => 'Conteudo do post'
+        // ]);
+         
+
+        // ****************************************
+        //      Deletando Posts de um usuário
+        // ****************************************
+        // $user->hasPosts()->delete();
+
+        // ****************************************
+        //      Colocando metodo pega relação
+        // ****************************************
+        // dd($user->hasPosts());
+
+        // ****************************************
+        //      pega dados
+        // ****************************************
+        // dd($user->hasPosts->toArray());
+
         $data['user'] = $user;
 
         return view('user/show', $data);
