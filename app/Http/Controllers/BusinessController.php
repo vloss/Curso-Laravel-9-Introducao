@@ -29,6 +29,14 @@ class BusinessController extends Controller
 
 
 
+        // ****************************************
+        // Deletar Registro
+        // ****************************************
+        $business = Business::find(3);
+        $business->delete();
+
+        dd($business);
+
 
         // ****************************************
         // 01 Atualizar Registro
@@ -60,17 +68,17 @@ class BusinessController extends Controller
         // ****************************************
         // 03 Atualizar Registro
         // ****************************************
-        $input = [
-            'name' => 'Loss',
-            'email' => 'loss@loss.com',
-            'address' => 'Rua AAA'
-        ];
+        // $input = [
+        //     'name' => 'Loss',
+        //     'email' => 'loss@loss.com',
+        //     'address' => 'Rua AAA'
+        // ];
 
-        $business = Business::find(3);
-        $business->fill($input);
-        $business->save();
+        // $business = Business::find(3);
+        // $business->fill($input);
+        // $business->save();
 
-        dd($business);
+        // dd($business);
 
 
         // ****************************************
