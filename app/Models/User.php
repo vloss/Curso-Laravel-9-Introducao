@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Post;
+use App\Models\Team;
 
 class User extends Authenticatable
 {
@@ -51,4 +52,14 @@ class User extends Authenticatable
         //return $this->hasMany(Post::class, 'foreignKey', 'localKey');
 
     }
+
+    public function hasTeams(){
+        
+        return $this->belongsToMany(Team::class);
+
+        // Caso não seja no padrão do laravel
+        //return $this->belongsToMany(Team::class, 'table' 'foreignPivoKey', 'relatedPivolKey');
+
+    }
+
 }

@@ -29,7 +29,6 @@ class UserController extends Controller
         //     'title'     => 'Meu Post',
         //     'content'   => 'Conteudo do post'
         // ]);
-         
 
         // ****************************************
         //      Deletando Posts de um usuário
@@ -45,6 +44,29 @@ class UserController extends Controller
         //      pega dados
         // ****************************************
         // dd($user->hasPosts->toArray());
+
+
+        // ****************************************
+        //      Relacionamento N to N
+        // ****************************************
+
+        // Insere o relacionamento do usuário atual com o Team passado no parametro do attach
+        //$user->hasTeams()->attach(2);
+
+        // Carrega todo o relacionamento do usuario
+        // $user->load(['hasTeams', 'hasPosts']);
+        
+        // Sincroniza o relacionamento do usuário atual com o Team passado no parametro do sync (Exclui tudo e insere o que é passado no parametro.)
+        // $user->hasTeams()->sync([3,2,1]);
+
+        // Sincroniza o relacionamento do usuário atual com o Team passado no parametro do syncWithoutDetaching (Não Exclui os antigos e insere o que é passado no parametro.)
+        // $user->hasTeams()->syncWithoutDetaching([3,2]);
+        
+        // Remove o relacionamento do usuário atual com o Team passado no parametro do detach
+        //$user->hasTeams()->detach([3,2]);
+
+
+        return $user->load(['hasTeams']);
 
         $data['user'] = $user;
 
