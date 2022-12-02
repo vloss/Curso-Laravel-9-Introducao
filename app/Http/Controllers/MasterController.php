@@ -19,6 +19,7 @@ class MasterController extends Controller
     
     public function show(Master $master){
 
+        return $master->load(['hasMasterDetail']);
 
         dd($master->hasMasterDetail());
 
